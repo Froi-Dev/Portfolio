@@ -48,7 +48,7 @@ Production assets use `/Portfolio/`, matching the site URL: https://froi-dev.git
 - `src/pages.css` — individual page layouts, halo, CV button, and certificate gallery.
 - `src/responsive.css` — final responsive rules, safe-area spacing, touch controls, container-aware buttons/forms, and mobile/tablet navigation.
 - `src/data/credentials.js` — CV path and certificate entries.
-- `src/data/projectMedia.js` — project screenshots, live demo URLs, and repository URLs (currently mock placeholders).
+- `src/data/projectMedia.js` — supplied system banners and optional live demo/repository URLs.
 - `src/components/ConnectedCarousel.jsx` / `.css` — the supplied carousel design adapted to Vite, JavaScript, plain CSS, and the existing Motion dependency.
 - `src/components/Reveal.jsx` — shared, reduced-motion-aware section entrances.
 - `src/components/AmbientPixels.jsx` — optional WebGL background with an error fallback.
@@ -82,13 +82,13 @@ Run `npm run refresh:github` to pull current activity. Starting the development 
 
 ### Portfolio content
 
-Existing experience figures and project descriptions are retained. The project visuals are labeled interface concepts, not screenshots of deployed products. Replace them with actual screenshots when available. The contact email is `froilandevera.dev@gmail.com`. The Home download button serves the supplied CV from `public/documents/Froilan-De-Vera-CV.pdf`. Add project repository/demo URLs as they become available.
+The five projects are ClassTrack, CollHuborate, CTF ToolKit, Melodix, and Verif.AI. Their supplied banners live in `public/images/projects/` and appear in both the carousel and project dialogs without cropping. Descriptions reflect the banners; technology stacks and external links can be added when verified. The contact email is `froilandevera.dev@gmail.com`. The Home download button serves the supplied CV from `public/documents/Froilan-De-Vera-CV.pdf`.
 
 See `THIRD_PARTY_NOTICES.md` for upstream sources and licenses.
 
 ## Project carousel
 
-Replace the `image`, `demoUrl`, and `repositoryUrl` values in `src/data/projectMedia.js` when real assets are ready. Image paths can be relative to `public/` or HTTPS URLs. Empty or failed images fall back to labeled mock interface concepts; missing external links stay disabled. Existing project descriptions and stacks live in `src/data/portfolio.js`.
+Update the `image`, `demoUrl`, and `repositoryUrl` values in `src/data/projectMedia.js` as needed. Image paths can be relative to `public/` or HTTPS URLs. Empty or failed images show the project name and a banner-unavailable message; missing external links stay disabled. Project descriptions and optional stacks live in `src/data/portfolio.js`. Filters are derived from the project types in use.
 
 The carousel measures its available width and uses consistent card layouts with transform-based sliding and scaling. Adjacent projects remain visible, and navigation controls sit above the cards. Autoplay pauses during hover, keyboard focus, open dialogs, offscreen visibility, hidden tabs, and reduced motion. The supplied Next.js/TypeScript/Tailwind example was adapted to the existing stack, so no Next.js or duplicate animation package is required.
 

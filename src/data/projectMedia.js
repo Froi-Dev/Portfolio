@@ -1,11 +1,9 @@
-// Replace mock visuals with screenshot paths relative to public/ or HTTPS URLs.
-// Add real links when available; missing links are shown as unavailable, not fake destinations.
+// Local banner paths are relative to public/ and support the deployment base URL.
+// Add verified live demo and repository URLs when available.
 export const PROJECT_MEDIA = {
-  ET: { image: null, imageAlt: 'Expense Tracker screenshot', demoUrl: null, repositoryUrl: null },
-  MH: { image: null, imageAlt: 'Mental Health App screenshot', demoUrl: null, repositoryUrl: null },
-  MP: { image: null, imageAlt: 'Music Player screenshot', demoUrl: null, repositoryUrl: null },
-  CS: { image: null, imageAlt: 'Campus Social Network screenshot', demoUrl: null, repositoryUrl: null },
-  RS: { image: null, imageAlt: 'Reservation System screenshot', demoUrl: null, repositoryUrl: null },
-  IS: { image: null, imageAlt: 'Inventory System screenshot', demoUrl: null, repositoryUrl: null },
-  JC: { image: null, imageAlt: 'Jewelry Customization App screenshot', demoUrl: null, repositoryUrl: null },
+  CT: { image: 'images/projects/classtrack.jpg', imageAlt: 'ClassTrack classroom participation dashboard with a simulated camera demo', demoUrl: null, repositoryUrl: null },
+  CH: { image: 'images/projects/collhuborate.jpg', imageAlt: 'CollHuborate banner showing project workspaces and task tracking', demoUrl: null, repositoryUrl: null },
+  CTF: { image: 'images/projects/ctf-toolkit.jpg', imageAlt: 'CTF ToolKit banner showing the cryptography decoder and analysis tools', demoUrl: null, repositoryUrl: null },
+  MX: { image: 'images/projects/melodix.jpg', imageAlt: 'Melodix Android music app banner with library, playlists, and offline playback', demoUrl: null, repositoryUrl: null },
+  VA: { image: 'images/projects/verif-ai.jpg', imageAlt: 'Verif.AI content verification platform and browser extension banner', demoUrl: null, repositoryUrl: null },
 };

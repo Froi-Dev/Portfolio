@@ -10,7 +10,7 @@
 .carousel-project-copy > p { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
 .carousel-project-copy .tech-tags { margin-top: auto; gap: 5px; }
 .carousel-project-copy .tech-tags > span { font-size: 10px; padding: 3px 6px; }
-.carousel-open { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 10px; margin-top: 12px; border-top: 1px solid var(--border); font-size: 12px; font-weight: 500; }
+.carousel-open { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 10px; margin-top: auto; border-top: 1px solid var(--border); font-size: 12px; font-weight: 500; }
 .carousel-open .bi { color: var(--accent); }
 .carousel-project-visual { flex: 0 0 166px; width: 100%; min-width: 0; border-radius: 12px; overflow: hidden; display: flex; }
 .carousel-project-visual .project-preview { width: 100%; height: 100%; min-height: 0; align-items: center; justify-content: center; padding: 12px 24px; border: 0; }
@@ -21,6 +21,9 @@
 .carousel-project-visual .mood-preview, .carousel-project-visual .jewelry-preview { gap: 7px; }
 .carousel-project-visual .mood-flower { transform: scale(.8); margin-block: -6px; }
 .project-screenshot { width: 100%; object-fit: contain; display: block; background: var(--surface); }
+.project-preview.project-banner-fallback { flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 24px; text-align: center; }
+.project-banner-fallback strong { font-size: 24px; }
+.project-banner-fallback > span:last-child { font-size: 12px; }
 .carousel-project-visual .project-screenshot { height: 100%; min-height: 0; }
 .carousel-controls { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 12px; }
 .carousel-arrows { display: flex; align-items: center; gap: 16px; }
