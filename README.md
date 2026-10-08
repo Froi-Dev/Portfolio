@@ -82,7 +82,7 @@ Run `npm run refresh:github` to pull current activity. Starting the development 
 
 ### Portfolio content
 
-The five projects are ClassTrack, CollHuborate, CTF ToolKit, Melodix, and Verif.AI. Their supplied banners live in `public/images/projects/` and appear in both the carousel and project dialogs without cropping. Descriptions reflect the banners; technology stacks and external links can be added when verified. The contact email is `froilandevera.dev@gmail.com`. The Home download button serves the supplied CV from `public/documents/Froilan-De-Vera-CV.pdf`.
+The nine projects are RustNote, FroiNet, Flux File Manager, CareRoute A.I, Melodix, ClassTrack, CollHuborate, CTF ToolKit, and Verif.AI. Their supplied banners live in `public/images/projects/` and appear in both the carousel and project dialogs without cropping. The latest five entries use source-verified descriptions, features, and technology stacks; Flux File Manager and Melodix include verified GitHub repository links. FroiNet uses the supplied `FluxNet.jpg` banner and `fluxnet` source folder. Desktop apps have their own filter, and all counts derive from the project data. The contact email is `froilandevera.dev@gmail.com`. The Home download button serves the supplied CV from `public/documents/Froilan-De-Vera-CV.pdf`.
 
 See `THIRD_PARTY_NOTICES.md` for upstream sources and licenses.
 

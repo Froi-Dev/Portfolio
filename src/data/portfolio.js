@@ -1,6 +1,86 @@
-// Project descriptions reflect the supplied system banners.
-// Add verified technology stacks when available.
+// New project details and stacks are verified against their local source folders.
+// Existing project details reflect the supplied system banners.
 export const PROJECTS = [
+  {
+    mark: 'RN',
+    type: 'Desktop App',
+    category: 'Productivity',
+    name: 'RustNote',
+    tagline: 'Write in tabs, float sticky notes, and keep your ideas within reach.',
+    tech: ['Rust', 'Win32', 'RichEdit', 'SQLite'],
+    desc: 'A native Windows rich-text editor with document tabs and floating sticky notes. Local SQLite storage, autosave, and session recovery keep writing available offline.',
+    features: [
+      'Rich-text formatting and RTF document support',
+      'Move notes between editor tabs and floating sticky windows',
+      'Pin notes on top with color, opacity, and editing-lock controls',
+      'Autosave, session recovery, and archived closed-note recovery',
+      'Find and replace with external-file change detection'
+    ]
+  },
+  {
+    mark: 'FN',
+    type: 'Desktop App',
+    category: 'Network Monitoring',
+    name: 'FroiNet',
+    tagline: 'Keep live upload, download, and recent traffic in view.',
+    tech: ['Rust', 'egui / eframe', 'OpenGL', 'sysinfo'],
+    desc: 'A lightweight Windows network monitor with live upload and download rates in a floating overlay. Compact and detailed views make it easy to watch activity while working.',
+    features: [
+      'Live network rates updated every second',
+      '60-sample traffic chart with session peaks and adapter details',
+      'Compact and detailed views in a movable overlay',
+      'Always-on-top and adjustable opacity controls',
+      'Saved layout and settings with offscreen window recovery'
+    ]
+  },
+  {
+    mark: 'FF',
+    type: 'Desktop App',
+    category: 'File Management',
+    name: 'Flux File Manager',
+    tagline: 'Browse, organize, and understand your Windows storage.',
+    tech: ['Rust', 'egui / eframe', 'Windows APIs', 'Serde'],
+    desc: 'A native Windows file manager built in Rust, combining responsive browsing, storage analysis, and everyday file operations. This portable beta includes search, duplicate discovery, and Recycle Bin tools.',
+    features: [
+      'Drive and folder browsing with sorting, filters, and image thumbnails',
+      'Create, rename, copy, cut, and paste with Windows clipboard support',
+      'Recursive search by filename, extension, size, and modified date',
+      'Storage breakdowns and SHA-256 verified duplicate discovery',
+      'Recycle Bin browsing, recycling, and file restoration'
+    ]
+  },
+  {
+    mark: 'CR',
+    type: 'Web App',
+    category: 'Customer Support',
+    name: 'CareRoute A.I',
+    tagline: 'Suggest FAQ answers and route sensitive tickets to people.',
+    tech: ['React', 'TypeScript', 'Python', 'FastAPI', 'SQLite'],
+    desc: 'A local customer-support triage dashboard that organizes tickets and routes sensitive requests to human review. Routine requests use approved FAQ suggestions, with an optional local language model through Ollama.',
+    features: [
+      'Ticket submission with persistent local storage',
+      'Category and priority detection with rules for human escalation',
+      'Offline FAQ suggestions and optional Ollama-assisted triage',
+      'Searchable inbox with status, priority, category, and routing filters',
+      'Agent review, editing, approval, and preserved decision history'
+    ]
+  },
+  {
+    mark: 'MX',
+    type: 'Mobile Application',
+    category: 'Music',
+    name: 'Melodix',
+    tagline: 'Find tracks, build playlists, and listen offline on Android.',
+    tech: ['Kotlin', 'Jetpack Compose', 'Room', 'Media3'],
+    desc: 'An Android music app for searching tracks, downloading audio, organizing a local library, and listening offline with background playback.',
+    features: [
+      'YouTube track search and audio downloads with progress tracking',
+      'Offline library with favorites, recently played, and most played tracks',
+      'Editable playlists with custom covers and track ordering',
+      'Spotify playlist import',
+      'Background playback with queues, shuffle, repeat, and playback speed'
+    ]
+  },
   {
     mark: 'CT',
     type: 'Tools',
@@ -44,21 +124,6 @@ export const PROJECTS = [
       'Recipe-based decoding with intermediate output',
       'Flag candidate identification',
       'Forensics, network analysis, and OSINT workspaces'
-    ]
-  },
-  {
-    mark: 'MX',
-    type: 'Mobile Application',
-    category: 'Music',
-    name: 'Melodix',
-    tagline: 'Build your library, organize playlists, and take your music with you.',
-    tech: [],
-    desc: 'An Android music app for finding tracks, building a personal library, and listening wherever you go, with downloads and offline playback.',
-    features: [
-      'Track search and personal music library',
-      'Playlist creation and import',
-      'Music downloads for offline playback',
-      'Dedicated home, search, library, and settings views'
     ]
   },
   {
