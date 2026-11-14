@@ -5,7 +5,6 @@ import Icon from './Icon.jsx';
 import ChristmasIcon from './ChristmasIcon.jsx';
 import { gsap } from 'gsap';
 import useMediaQuery from '../hooks/useMediaQuery.js';
-import { createChristmasMusic } from '../lib/christmasMusic.js';
 import { createWinterScene } from '../lib/winterScene.js';
 
 const HolidayContext = createContext(null);
@@ -19,37 +18,33 @@ export function HolidayProvider({ children }) {
   const [busy, setBusy] = useState(false);
   const [audioError, setAudioError] = useState(false);
   const [autoplayBlocked, setAutoplayBlocked] = useState(false);
-  const player = useRef(null);
+  const audioTrack = useRef(null);
   const mounted = useRef(false), wanted = useRef(true), playingRef = useRef(false), request = useRef(0);
-  const startMusic = useCallback(async (autoplay = false) => {
+  const startMusic = useCallback(async () => {
     const attempt = ++request.current;
     try {
-      player.current ??= createChristmasMusic(.85, started => {
-        if (!mounted.current || !wanted.current) return;
-        playingRef.current = started; setPlaying(started);
-        if (started) { setAutoplayBlocked(false); setAudioError(false); }
-      });
-      const started = await player.current.play({ autoplay });
+      const track = audioTrack.current;
+      if (!track) return;
+      track.volume = .85;
+      await track.play();
       if (!mounted.current || attempt !== request.current || !wanted.current) {
-        if (!wanted.current) player.current?.stop();
+        if (!wanted.current) track.pause();
         return;
       }
-      playingRef.current = started; setPlaying(started); setAutoplayBlocked(!started); setAudioError(false);
+      playingRef.current = true; setPlaying(true); setAutoplayBlocked(false); setAudioError(false);
     } catch {
-      if (mounted.current && attempt === request.current) { setAudioError(true); setPlaying(false); }
+      if (mounted.current && attempt === request.current) { setAutoplayBlocked(true); setAudioError(false); setPlaying(false); }
     }
   }, []);
   useEffect(() => {
     mounted.current = true;
-    if (!document.hidden && wanted.current) void startMusic(true);
+    if (!document.hidden && wanted.current) void startMusic();
     const firstInteraction = event => {
       if (!wanted.current || playingRef.current || document.hidden || event.target?.closest?.('[data-music-control]')) return;
-      void startMusic(false);
+      void startMusic();
     };
     const visibility = () => {
-      if (document.hidden) {
-        request.current++; player.current?.stop(); playingRef.current = false; setPlaying(false);
-      } else if (wanted.current) void startMusic(true);
+      if (!document.hidden && wanted.current) void startMusic();
     };
     document.addEventListener('pointerdown', firstInteraction);
     document.addEventListener('keydown', firstInteraction);
@@ -59,21 +54,27 @@ export function HolidayProvider({ children }) {
       document.removeEventListener('pointerdown', firstInteraction);
       document.removeEventListener('keydown', firstInteraction);
       document.removeEventListener('visibilitychange', visibility);
-      player.current?.destroy(); player.current = null; playingRef.current = false;
+      audioTrack.current?.pause(); playingRef.current = false;
     };
   }, [startMusic]);
   const toggleMusic = async () => {
     if (busy) return;
     if (playingRef.current) {
-      wanted.current = false; request.current++; player.current?.stop(); playingRef.current = false;
+      wanted.current = false; request.current++; audioTrack.current?.pause(); playingRef.current = false;
       setPlaying(false); setAutoplayBlocked(false); return;
     }
     wanted.current = true; setBusy(true);
-    try { await startMusic(false); } finally { if (mounted.current) setBusy(false); }
+    try { await startMusic(); } finally { if (mounted.current) setBusy(false); }
   };
-  return <HolidayContext.Provider value={{ moving, reducedMotion, toggleMotion: () => setMotionChoice(!moving), playing, busy, audioError, autoplayBlocked, toggleMusic }}>
-    {children}
-  </HolidayContext.Provider>;
+  return <>
+    <audio ref={audioTrack} autoPlay loop preload="auto" src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/audio/christmas-carol.wav`} aria-hidden="true"
+      onPlaying={() => { if (wanted.current) { playingRef.current = true; setPlaying(true); setAutoplayBlocked(false); setAudioError(false); } }}
+      onPause={() => { playingRef.current = false; setPlaying(false); }}
+      onError={() => { setAudioError(true); setPlaying(false); }} />
+    <HolidayContext.Provider value={{ moving, reducedMotion, toggleMotion: () => setMotionChoice(!moving), playing, busy, audioError, autoplayBlocked, toggleMusic }}>
+      {children}
+    </HolidayContext.Provider>
+  </>;
 }
 
 export function WinterScene() {
