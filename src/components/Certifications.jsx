@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import Icon from './Icon.jsx';
-import { certifications } from '../data/credentials.js';
+import { badges, certifications } from '../data/credentials.js';
 import './Certifications.css';
 
-const assetUrl = path => `${import.meta.env.BASE_URL}${path}`;
-const issuerLabels = { cisco: 'cisco', dict: 'DICT', kaspersky: 'K', digiforce: 'DF' };
+const assetUrl = path => `${(process.env.NEXT_PUBLIC_BASE_PATH || '') + '/'}${path}`;
+const issuerLabels = { cisco: 'cisco', dict: 'DICT', kaspersky: 'K', digiforce: 'DF', appbuilders: 'AB', aws: 'AWS', adbi: 'ADBI', nc: 'NC', tesda: 'TESDA' };
 const groups = [...new Set(certifications.map(certificate => certificate.group))];
 
 function CredentialDialog({ certificate, onClose }) {
@@ -27,7 +27,7 @@ function CredentialDialog({ certificate, onClose }) {
     onCancel={event => { event.preventDefault(); onClose(); }}
     onClick={event => { if (event.target === event.currentTarget) onClose(); }}>
     <div className="credential-dialog-heading"><div><span className="eyebrow">{certificate.issuer}</span><h2 id="credential-dialog-title">{certificate.title}</h2><p>{certificate.kind} · {certificate.date}</p></div><button className="icon-button" type="button" aria-label="Close credential" onClick={onClose} autoFocus><Icon name="x-lg" /></button></div>
-    <div className="credential-document"><img src={assetUrl(certificate.image)} alt={`${certificate.title} — ${certificate.issuer}, issued ${certificate.date}`} /></div>
+    <div className="credential-document">{certificate.image ? <img src={assetUrl(certificate.image)} alt={`${certificate.title} — ${certificate.issuer}, issued ${certificate.date}`} /> : <div className="credential-document-placeholder"><span className="eyebrow">Credential document</span><strong>{certificate.title}</strong><span>{certificate.issuer}</span></div>}</div>
     <div className="credential-dialog-actions"><a className="button button-secondary" href={assetUrl(certificate.file)} target="_blank" rel="noreferrer">Open original <Icon name="arrow-up-right" /></a>{certificate.url && <a className="button button-primary" href={certificate.url} target="_blank" rel="noreferrer">Verify credential <Icon name="arrow-up-right" /></a>}</div>
   </dialog>, document.body);
 }
@@ -36,7 +36,7 @@ export default function Certifications() {
   const [selected, setSelected] = useState(null);
 
   return <section className="content-section certifications" id="certifications" aria-labelledby="certifications-title">
-    <div className="section-heading"><div><span className="eyebrow">04 / Learning & growth</span><h1 id="certifications-title">Learning, put into practice<span>.</span></h1></div><span className="credential-total">{String(certifications.length).padStart(2, '0')} credentials <span>/ 2026</span></span></div>
+    <div className="section-heading"><div><span className="eyebrow">04 / Learning & growth</span><h1 id="certifications-title">Learning, put into practice<span>.</span></h1></div><span className="credential-total">{String(certifications.length + badges.length).padStart(2, '0')} credentials <span>/ 2026</span></span></div>
     <p className="credentials-intro">A collection of courses, hands-on training, and cybersecurity milestones.{' '}<br />Explore the certificates and their available verification records.</p>
     {groups.map(group => <section className="credential-group" key={group} aria-label={group}>
       <div className="credential-group-heading"><h2>{group}</h2><span>{String(certifications.filter(certificate => certificate.group === group).length).padStart(2, '0')}</span></div>
@@ -48,6 +48,18 @@ export default function Certifications() {
         <div className="credential-tile-footer">{certificate.url ? <a href={certificate.url} target="_blank" rel="noreferrer" aria-label={`Verify ${certificate.title} — ${certificate.issuer}`}><span aria-hidden="true">❮</span> Verify <span aria-hidden="true">❯</span></a> : <button type="button" onClick={() => setSelected(certificate)} aria-haspopup="dialog" aria-label={`View certificate for ${certificate.title}`}><span aria-hidden="true">❮</span> View certificate <span aria-hidden="true">❯</span></button>}</div>
       </article>)}</div>
     </section>)}
+    <section className="credential-group badge-section" aria-labelledby="badge-section-title">
+      <div className="credential-group-heading"><h2 id="badge-section-title">Digital badges</h2><span>{String(badges.length).padStart(2, '0')}</span></div>
+      <p className="badge-section-intro">Verified learning milestones from AI, cloud, and cybersecurity programs.</p>
+      <div className="badge-card-grid">{badges.map(badge => <article className="badge-card" key={badge.id}>
+        <a className="badge-artwork" href={assetUrl(badge.file)} target="_blank" rel="noreferrer" aria-label={`Open ${badge.title} badge`}>
+          <img src={assetUrl(badge.image)} alt={`${badge.title} badge from ${badge.issuer}`} loading="lazy" />
+        </a>
+        <div className="badge-details"><span className="eyebrow">{badge.issuer}</span><h3>{badge.title}</h3><span className="badge-date">{badge.date}</span>
+          <a className="badge-link" href={badge.url || assetUrl(badge.file)} target="_blank" rel="noreferrer">{badge.url ? 'Verify badge' : 'Open badge'} <Icon name="arrow-up-right" /></a>
+        </div>
+      </article>)}</div>
+    </section>
     {selected && <CredentialDialog certificate={selected} onClose={() => setSelected(null)} />}
   </section>;
 }

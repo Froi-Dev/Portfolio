@@ -1,5 +1,7 @@
 # Designing a portfolio with this theme
 
+> Christmas edition: the current implementation uses Next.js + React, with seasonal colors and responsive overrides in `src/christmas.css`. SVG decorations and GSAP-driven Canvas 2D scenery replace the former PixelBlast home background. This guide describes the underlying portfolio design; see `PORTFOLIO_BUILD_GUIDE.md` for the current architecture.
+
 This guide explains the visual decisions behind this portfolio and how to apply them to your own work. It describes the current local implementation; the companion [build guide](PORTFOLIO_BUILD_GUIDE.md) explains where and how to implement it.
 
 ## 1. Start with the visual direction

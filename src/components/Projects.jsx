@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { PROJECTS, PROJECT_TYPES } from '../data/portfolio.js';
@@ -9,14 +10,14 @@ function ProjectVisual({ project }) {
   const media = PROJECT_MEDIA[project.mark];
   const [failed, setFailed] = useState(false);
   if (!media?.image || failed) return <ProjectPreview project={project} />;
-  const src = /^https?:\/\//.test(media.image) ? media.image : `${import.meta.env.BASE_URL}${media.image}`;
+  const src = /^https?:\/\//.test(media.image) ? media.image : `${(process.env.NEXT_PUBLIC_BASE_PATH || '') + '/'}${media.image}`;
   return <img className="project-screenshot" src={src} alt={media.imageAlt || `${project.name} screenshot`} loading="lazy" draggable={false} onError={() => setFailed(true)} />;
 }
 
 function ProjectLinks({ project, onClose }) {
   const media = PROJECT_MEDIA[project.mark] || {};
   const links = [['Live demo', media.demoUrl, 'arrow-up-right'], ['Source code', media.repositoryUrl, 'github']];
-  return <><h3>Project links</h3><div className="project-link-actions">{links.map(([label, url, icon]) => /^https?:\/\//.test(url || '') ? <a key={label} className="button button-secondary" href={url} target="_blank" rel="noreferrer">{label} <Icon name={icon} /></a> : <button key={label} type="button" className="button button-secondary" disabled>{label} <Icon name={icon} /></button>)}</div>{!media.demoUrl && !media.repositoryUrl && <p className="project-link-note">Live demo and repository links coming soon.</p>}<a className="text-link" href="#/contact" onClick={onClose}>Discuss this project <Icon name="arrow-up-right" /></a></>;
+  return <><h3>Project links</h3><div className="project-link-actions">{links.map(([label, url, icon]) => /^https?:\/\//.test(url || '') ? <a key={label} className="button button-secondary" href={url} target="_blank" rel="noreferrer">{label} <Icon name={icon} /></a> : <button key={label} type="button" className="button button-secondary" disabled>{label} <Icon name={icon} /></button>)}</div>{!media.demoUrl && !media.repositoryUrl && <p className="project-link-note">Live demo and repository links coming soon.</p>}<Link className="text-link" href="/contact/" onClick={onClose}>Discuss this project <Icon name="arrow-up-right" /></Link></>;
 }
 
 function ProjectPreview({ project }) {

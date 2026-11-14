@@ -20,7 +20,7 @@ export default function ConnectedCarousel({ items, renderPreview, onOpen, suspen
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
   const [visible, setVisible] = useState(false);
-  const [pageVisible, setPageVisible] = useState(!document.hidden);
+  const [pageVisible, setPageVisible] = useState(true);
   const progress = useMotionValue(0);
   const total = items.length;
   const activeIndex = total ? mod(page, total) : 0;

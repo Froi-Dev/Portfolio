@@ -1,0 +1,220 @@
+/* The Christmas edition: ASCII scenery behind a quiet, readable portfolio. */
+:root { --sidebar-w: 185px; --christmas-red: #f1273d; --winter-ink: #315c71; }
+[data-theme="light"] {
+  --bg: #eef1f4; --fg: #080c0a; --muted: #424c53; --faint: #737d83;
+  --surface: #ffffffed; --surface-2: #edf2f3; --border: #dce2e5;
+  --accent: #00863b; --accent-soft: #e6f6ed; --accent-fg: #fff;
+  --glass: #ffffffc7; --glass-border: #dce2e5; --glass-highlight: #ffffffa6;
+  --glass-shadow: 0 7px 18px #2546560b, 0 1px 2px #2546561a;
+}
+[data-theme="dark"] {
+  --bg: #191a1d; --surface: #202125; --surface-2: #25262a;
+  --border: #34363b; --muted: #bdced4; --faint: #a2b9c3;
+  --accent: #7de3a7; --accent-soft: #17372c; --christmas-red: #ff7b88;
+  --glass: #202125; --glass-border: #34363b; --glass-highlight: transparent;
+}
+html, body { max-width: 100%; overflow-x: clip; }
+.christmas-site { isolation: isolate; min-height: 100dvh; }
+.winter-background { position: fixed; inset: 0 0 0 var(--sidebar-w); z-index: -1; pointer-events: none; overflow: hidden; background: var(--bg); }
+[data-theme="dark"] .winter-background { background: #191a1d; }
+.winter-background canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.sidebar { padding: 28px 20px 25px; background: color-mix(in srgb, var(--bg) 93%, transparent); }
+.sidebar-brand .brand-name { font-size: 16px; white-space: nowrap; letter-spacing: -.7px; font-weight: 700; }
+.sidebar-main { margin-top: 52px; }
+.sidebar-label, .mini-label { font-size: 8px; }
+.side-links { margin-top: 10px; gap: 2px; }
+.side-link { color: var(--muted); padding: 9px 12px; min-height: 37px; font-size: 11px; gap: 12px; }
+.side-link.is-active { border-color: transparent; }
+.nav-index { font-size: 8px; }
+.sidebar-note { margin: 25px 8px 0; padding-top: 16px; }
+.sidebar-note p { font-size: 11px; line-height: 1.5; position: relative; padding-left: 13px; }
+.sidebar-note p::before { content: ''; position: absolute; top: 5px; left: 0; width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
+.sidebar-bottom { padding-inline: 8px; }
+.theme-row { padding: 12px 0; }
+.theme-switch { padding: 2px; gap: 0; }
+.theme-switch button { width: 29px; height: 29px; min-width: 29px; min-height: 29px; }
+.sidebar-christmas { border-top: 1px solid var(--border); padding-top: 19px; }
+.sidebar-christmas strong { font-size: 12px; font-weight: 600; color: var(--christmas-red); white-space: nowrap; }
+.sidebar-christmas strong span { margin-right: 3px; }
+.sidebar-christmas p { margin-top: 9px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.sidebar-christmas small { display: block; color: var(--faint); font-size: 7px; white-space: nowrap; margin-top: 23px; }
+.route-main--home { max-width: 840px; }
+.hero { padding: 32px 0 220px; }
+.hero .hero-intro { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); column-gap: 64px; row-gap: 24px; }
+.hero .hero-copy { container-type: normal; }
+.hero .hero-copy .eyebrow { display: flex; align-items: center; gap: 7px; font-size: 8px; font-weight: 500; letter-spacing: .35px; color: var(--fg); }
+.hero .hero-copy .eyebrow .status-dot { width: 4px; height: 4px; box-shadow: none; }
+.christmas-name { margin-top: 28px; position: relative; max-width: 285px; }
+.hero .hero-copy h1 { font-size: clamp(52px, 4.5vw, 66px); font-weight: 700; letter-spacing: -3.5px; line-height: .98; margin-top: 0; }
+.santa-hat { position: absolute; pointer-events: none; filter: drop-shadow(0 2px 1px #0002); }
+.name-hat { width: 70px; left: -24px; top: -29px; transform: rotate(-18deg); z-index: 2; }
+.christmas-lights { width: 100%; height: 27px; margin-top: -1px; overflow: visible; color: var(--accent); }
+.light-bulb { filter: drop-shadow(0 0 2px currentColor); }
+.hero .hero-role { font-size: 12px; margin: 10px 0 8px; letter-spacing: -.35px; }
+.hero .hero-description { max-width: 46ch; font-size: 13px; line-height: 1.55; }
+.hero .hero-actions { margin-top: 20px; gap: 10px; }
+.hero .hero-actions .button { min-height: 40px; padding: 10px 16px; font-size: 12px; gap: 10px; }
+.hero .button.button-primary { background: #007d36; color: #fff; border-color: #00883c; box-shadow: 0 4px 10px #007d3620; }
+.hero .button.button-primary:hover { background: #006b30; color: #fff; }
+.hero .hero-socials { margin-top: 9px; gap: 22px; }
+.hero .hero-socials a { min-height: 29px; font-size: 12px; color: var(--fg); gap: 7px; }
+.hero .hero-socials a:hover { color: var(--accent); }
+.hero .hero-socials a .bi:first-child { font-size: 14px; }
+.hero .hero-socials a .bi:last-child { font-size: 8px; }
+.hero .hero-showcase { display: flex; max-width: 300px; justify-self: end; align-self: start; width: 100%; }
+.hero .portrait-card { padding: 4px; border-radius: 16px; background: #fff; border: 1px solid #d7e2e8; box-shadow: 0 8px 13px #284e6224, 0 2px 3px #284e622e; }
+.hero .portrait-image { aspect-ratio: 3 / 3.75; border-radius: 11px; background: #e4eef4; }
+.hero .portrait-fallback { object-position: center; mix-blend-mode: multiply; }
+[data-theme="dark"] .hero .portrait-card { background: #29444e; border-color: #45636c; }
+[data-theme="dark"] .hero .portrait-fallback { mix-blend-mode: normal; }
+.portrait-hat { width: 73%; top: -.5%; left: 21%; z-index: 1; transform: rotate(9deg); }
+.portrait-snow { position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: .65; background-image: radial-gradient(ellipse, #fff 1px, transparent 2px), radial-gradient(ellipse, #fff 1.5px, transparent 2.5px); background-size: 47px 61px, 71px 83px; background-position: 13px 19px, 37px 49px; mask-image: linear-gradient(#000, #0005 55%, #000); }
+.halo-orbit { top: 6%; z-index: 2; }
+.halo-orbit .orbit-image { padding: 7px; border-radius: 8px; }
+.halo-controls { left: 8px; right: 8px; bottom: 8px; gap: 8px; }
+.halo-label { font-size: 10px; padding: 8px 14px; min-height: 35px; }
+.halo-controls .toolkit-pause { width: 35px; height: 35px; min-width: 35px; min-height: 35px; }
+.hero .hero-stats { border-radius: 13px; background: var(--glass); box-shadow: var(--glass-shadow); padding-block: 12px; }
+.hero .hero-stat, .hero .hero-stat:first-child { padding: 0 21px; gap: 4px; }
+.hero .hero-stat strong { font-size: 23px; font-weight: 600; }
+.hero .hero-stat > span:last-child { color: var(--muted); font-size: 9px; }
+.holiday-greeting { position: absolute; top: 31px; left: 33%; display: flex; gap: 13px; align-items: center; text-align: center; z-index: 3; color: var(--christmas-red); font: italic 26px/.97 var(--font-mono); letter-spacing: 1px; transform: rotate(-4deg); pointer-events: none; }
+.holiday-greeting div > span { font-size: 25px; }
+.holiday-greeting pre { margin: 0; padding: 0; color: var(--accent); font: 13px/1.05 var(--font-mono); overflow: visible; }
+.holiday-greeting small { display: block; color: var(--accent); font: 10px var(--font-mono); margin-top: 6px; letter-spacing: 0; }
+.holiday-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 17px; }
+.holiday-edition { font: 8px var(--font-mono); letter-spacing: 1px; color: var(--faint); }
+.holiday-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.holiday-controls button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 38px; padding: 8px 12px; border-radius: 24px; border: 1px solid var(--border); background: var(--surface); font-size: 10px; white-space: nowrap; backdrop-filter: blur(12px); }
+.holiday-controls button:hover { border-color: var(--accent); }
+.holiday-controls button[aria-pressed="true"] { color: var(--accent); }
+.music-bars { display: flex; align-items: center; gap: 2px; height: 12px; }
+.music-bars i { background: currentColor; width: 2px; height: 5px; }
+.music-bars i:nth-child(2) { height: 10px; animation-delay: -.3s; }
+.music-bars i:nth-child(3) { height: 7px; animation-delay: -.6s; }
+.music-bars i:nth-child(4) { height: 11px; animation-delay: -.2s; }
+.music-is-playing .music-bars i { animation: christmas-equalizer .8s ease-in-out infinite alternate; }
+.holiday-route-controls { position: fixed; right: 24px; bottom: 20px; z-index: 20; }
+.route-page > .content-section { background: color-mix(in srgb, var(--bg) 90%, transparent); border-radius: 16px; padding-inline: 24px; margin-block: 28px; }
+@keyframes christmas-equalizer { to { transform: scaleY(.25); } }
+@media (min-width: 1600px) { .route-main--home { max-width: 1000px; } .hero { padding-top: 60px; } .hero .hero-showcase { max-width: 350px; } .hero .hero-copy h1 { font-size: 80px; } .holiday-greeting { top: 50px; left: 34%; } }
+@media (min-width: 901px) and (max-height: 700px) { .sidebar { padding-top: 24px; padding-bottom: 20px; } .sidebar-main { margin-top: 35px; } .sidebar-note { display: block; margin-top: 20px; padding-top: 14px; } .sidebar-christmas { padding-top: 15px; } .sidebar-christmas small { margin-top: 18px; } }
+@media (max-width: 1100px) and (min-width: 901px) { .hero .hero-intro { column-gap: 28px; } .holiday-greeting { font-size: 21px; gap: 6px; left: 30%; } .holiday-greeting div > span { font-size: 20px; } .holiday-greeting pre { font-size: 10px; } .hero .hero-copy h1 { font-size: 55px; } }
+@media (max-width: 900px) {
+  :root { --sidebar-w: 0px; }
+  .sidebar { display: contents; }
+  .sidebar-christmas { display: none; }
+  .sidebar-brand .brand-name { font-size: 19px; }
+  .theme-switch button { min-width: 44px; min-height: 44px; }
+  .side-link { min-height: 52px; padding: 6px 2px; font-size: 10px; gap: 7px; }
+  .hero { padding: 16px 0 170px; }
+  .hero .hero-intro { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); column-gap: 28px; }
+  .hero .hero-copy h1 { font-size: clamp(48px, 7.5vw, 64px); }
+  .holiday-greeting { top: -5px; left: 32%; font-size: 22px; gap: 7px; }
+  .holiday-greeting div > span { font-size: 21px; }
+  .holiday-greeting pre { font-size: 10px; }
+  .hero .hero-copy .eyebrow { font-size: 7px; }
+  .hero .hero-actions .button { font-size: 11px; min-height: 44px; }
+  .hero .hero-socials a { min-height: 44px; }
+  .holiday-route-controls { bottom: calc(80px + env(safe-area-inset-bottom)); right: 12px; }
+  .route-page > .content-section { margin-block: 0 70px; padding-inline: 16px; }
+}
+@media (max-width: 650px) {
+  .hero { padding-top: 0; }
+  .hero .hero-intro { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-areas: 'copy' 'portrait' 'stats'; gap: 25px; }
+  .hero .hero-copy h1 { font-size: clamp(60px, 16vw, 76px); letter-spacing: -3.5px; }
+  .holiday-greeting { position: relative; left: auto; top: auto; justify-content: center; margin: 0 0 30px; font-size: 26px; }
+  .holiday-greeting div > span { font-size: 24px; }
+  .holiday-greeting pre { font-size: 12px; }
+  .hero .hero-copy .eyebrow { font-size: 8px; letter-spacing: .3px; }
+  .christmas-name { margin-top: 30px; max-width: 350px; }
+  .hero .hero-role { margin-top: 11px; font-size: 11px; }
+  .hero .hero-description { font-size: 14px; line-height: 1.65; }
+  .hero .hero-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero .hero-actions .button { min-height: 46px; font-size: 12px; padding: 12px 14px; }
+  .hero .hero-socials { gap: 25px; }
+  .hero .hero-socials a { font-size: 14px; }
+  .hero .hero-showcase { max-width: 340px; justify-self: center; }
+  .hero .portrait-image { aspect-ratio: 3 / 3.75; }
+  .halo-controls .toolkit-pause { min-width: 44px; min-height: 44px; }
+  .halo-label { min-height: 44px; }
+  .hero .hero-stat, .hero .hero-stat:first-child { padding: 0 10px; }
+  .hero .hero-stat strong { font-size: 23px; }
+  .hero .hero-stat > span:last-child { font-size: 8px; line-height: 1.65; }
+  .holiday-bottom { flex-wrap: wrap; justify-content: center; gap: 15px; }
+  .holiday-edition { order: 1; width: 100%; text-align: center; }
+  .holiday-controls button { min-height: 44px; font-size: 10px; }
+  .winter-background > canvas:first-child, .winter-background > canvas:nth-child(2) { opacity: .5; }
+  .holiday-route-controls .holiday-controls { justify-content: flex-end; }
+}
+@media (prefers-reduced-motion: reduce) { .light-bulb, .music-is-playing .music-bars i { animation: none; } }
+
+/* Soft Christmas controls: raised surfaces and a quiet red/green ribbon. */
+:root {
+  --neu-surface: #eef1f4; --neu-shadow-dark: #cbd0d6; --neu-shadow-light: #ffffff;
+  --neu-shadow: 6px 6px 15px var(--neu-shadow-dark), -6px -6px 15px var(--neu-shadow-light);
+}
+[data-theme="dark"] {
+  --neu-surface: #202125; --neu-shadow-dark: #111214; --neu-shadow-light: #2a2c31;
+}
+.winter-snowfall { position: fixed; inset: 0 0 0 var(--sidebar-w); width: calc(100% - var(--sidebar-w)); height: 100%; z-index: 15; pointer-events: none; }
+.hero .hero-copy h1 { white-space: nowrap; width: max-content; max-width: 100%; }
+.christmas-name { width: max-content; max-width: 100%; }
+.christmas-lights { max-width: 100%; }
+.button, .holiday-controls button, .icon-button, .project-filters button {
+  background: var(--neu-surface); border: 1px solid color-mix(in srgb, var(--fg) 7%, transparent);
+  box-shadow: var(--neu-shadow); backdrop-filter: none; -webkit-backdrop-filter: none;
+}
+.button:hover, .holiday-controls button:hover, .icon-button:hover, .project-filters button:hover { border-color: color-mix(in srgb, var(--accent) 40%, var(--border)); }
+.button:active, .holiday-controls button:active, .icon-button:active {
+  box-shadow: inset 3px 3px 7px var(--neu-shadow-dark), inset -3px -3px 7px var(--neu-shadow-light);
+}
+.hero .button.button-primary, .button.button-primary { background: #176947; border-color: #20734f; color: #fff; box-shadow: 5px 5px 12px var(--neu-shadow-dark), -4px -4px 11px var(--neu-shadow-light); }
+.hero .button.button-primary:hover, .button.button-primary:hover { background: #135a3c; color: #fff; }
+.hero .button.button-secondary, .button.button-secondary { background: var(--neu-surface); color: var(--fg); }
+.hero .hero-stats, .contact-form, .stack-category { background: var(--neu-surface); box-shadow: var(--neu-shadow); border-color: var(--border); }
+.hero .portrait-card { box-shadow: 8px 8px 20px var(--neu-shadow-dark), -6px -6px 18px var(--neu-shadow-light); }
+[data-theme="dark"] .hero .portrait-card { background: #25262a; border-color: #3a3c41; }
+.theme-switch { background: var(--neu-surface); border-color: var(--border); box-shadow: inset 3px 3px 7px var(--neu-shadow-dark), inset -3px -3px 7px var(--neu-shadow-light); }
+.theme-switch button[aria-pressed="true"] { background: var(--neu-surface); box-shadow: 2px 2px 5px var(--neu-shadow-dark), -2px -2px 5px var(--neu-shadow-light); }
+.holiday-bottom { flex-wrap: wrap; row-gap: 18px; }
+.holiday-controls { gap: 11px; align-items: center; justify-content: flex-end; }
+.holiday-controls button { min-height: 42px; font-size: 10px; padding: 9px 13px; }
+.holiday-controls .christmas-music-button { position: relative; overflow: hidden; padding-left: 20px; color: var(--fg); }
+.christmas-music-button::before { content: ''; position: absolute; inset: 0 auto 0 0; width: 5px; background: repeating-linear-gradient(45deg, #b73e4b 0 6px, #f2e5d0 6px 10px, #227147 10px 16px, #f2e5d0 16px 20px); }
+.holiday-controls .christmas-music-button[aria-pressed="true"] { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 25%, var(--border)); }
+.holiday-bell { font-size: 14px; }
+.christmas-music-label { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.about-grid--simple { display: block; }
+.about-grid--simple .about-copy { max-width: 80ch; }
+.about-grid--simple .about-copy > p { line-height: 1.85; }
+@media (min-width: 1600px) { .hero .hero-copy h1 { font-size: 80px; } }
+@media (max-width: 900px) { .winter-snowfall { inset: 0; width: 100%; } }
+@media (max-width: 650px) {
+  .holiday-controls { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr); width: 100%; gap: 12px; }
+  .holiday-controls button { min-width: 0; min-height: 46px; width: 100%; padding-inline: 10px; }
+  .holiday-controls .christmas-music-button { padding-left: 17px; }
+  .holiday-controls .music-bars { display: none; }
+  .holiday-route-controls { left: 16px; right: 16px; }
+  .holiday-route-controls .holiday-controls { display: flex; flex-wrap: wrap; }
+  .holiday-route-controls .holiday-controls button { width: auto; }
+  .about-grid--simple .about-tags { gap: 10px 18px; }
+}
+
+/* Compact side dock. Controls are local SVGs; volume is fixed at the louder mix. */
+.christmas-icon { display: inline-block; vertical-align: -.15em; flex-shrink: 0; }
+.sidebar-christmas strong { display: flex; align-items: center; gap: 6px; }
+.sidebar-christmas strong .christmas-icon { color: var(--christmas-red); }
+.sidebar-christmas p > .christmas-icon { color: var(--accent); width: 13px; height: 13px; }
+.holiday-greeting small { display: flex; align-items: center; justify-content: center; gap: 5px; }
+.holiday-greeting small .christmas-icon { color: var(--christmas-red); width: 23px; height: 18px; }
+.holiday-side-controls { position: fixed; right: max(18px, env(safe-area-inset-right)); bottom: 26px; z-index: 24; }
+.holiday-side-controls .holiday-controls { display: grid; grid-template-columns: 46px; gap: 12px; width: auto; }
+.holiday-side-controls .holiday-controls button { position: relative; width: 46px; min-width: 46px; height: 46px; min-height: 46px; padding: 0; border-radius: 16px; justify-content: center; }
+.holiday-side-controls .holiday-controls button > span { display: none; }
+.holiday-side-controls .holiday-controls button .holiday-bell { display: flex; align-items: center; justify-content: center; }
+.holiday-side-controls .holiday-bell .christmas-icon { width: 21px; height: 21px; }
+.holiday-side-controls .christmas-music-button > .bi { position: absolute; width: 10px; height: 10px; right: 5px; bottom: 5px; }
+.holiday-side-controls .christmas-music-button::before { width: 3px; }
+.holiday-bottom { justify-content: flex-start; }
+@media (max-width: 900px) { .holiday-side-controls { right: max(12px, env(safe-area-inset-right)); bottom: calc(91px + env(safe-area-inset-bottom)); } }

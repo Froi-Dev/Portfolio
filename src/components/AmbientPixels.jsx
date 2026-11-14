@@ -21,7 +21,7 @@ export default function AmbientPixels({ theme }) {
     } catch { return false; }
   });
   return <div className="site-pixels" aria-hidden="true">
-    <div className="site-grain" style={{ backgroundImage: `url("${import.meta.env.BASE_URL}images/grain.svg")` }} />
+    <div className="site-grain" style={{ backgroundImage: `url("${(process.env.NEXT_PUBLIC_BASE_PATH || '') + '/'}images/grain.svg")` }} />
     {!reducedMotion && supported && <div className="site-pixel-animation"><BackgroundBoundary><Suspense fallback={null}>
       <PixelBlast variant="circle" pixelSize={compact ? 8 : 6} color={theme === 'light' ? '#000000' : '#ffffff'} patternScale={3} patternDensity={1.2} pixelSizeJitter={0.5} enableRipples={false} liquid={false} antialias={!compact} speed={0.6} edgeFade={0} transparent />
     </Suspense></BackgroundBoundary></div>}

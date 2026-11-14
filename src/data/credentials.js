@@ -5,6 +5,25 @@ export const cvPath = 'documents/Froilan-De-Vera-CV.pdf';
 // Verification URLs are decoded from the QR codes on those files.
 export const certifications = [
   {
+    id: 'appbuildersph-hackathon-2026', title: 'AppBuildersPH Hackathon 2026',
+    issuer: 'App Builders PH', issuerKey: 'appbuilders',
+    group: 'Building & cloud', kind: 'Certificate of participation', date: '09–10 Oct 2026',
+    file: 'certificates/appbuildersph-hackathon-2026.pdf', image: 'certificates/previews/appbuildersph-hackathon-2026.png',
+  },
+  {
+    id: 'aws-certified-cloud-practitioner', title: 'AWS Certified Cloud Practitioner',
+    issuer: 'TESDA Online Program', issuerKey: 'aws',
+    group: 'Building & cloud', kind: 'Course completion · CLF-C02', date: '24 Oct 2026',
+    file: 'certificates/aws-certified-cloud-practitioner.pdf', image: 'certificates/previews/aws-certified-cloud-practitioner.png',
+  },
+  {
+    id: 'adbi-cybersecurity', title: 'Cybersecurity',
+    issuer: 'Asian Development Bank Institute', issuerKey: 'adbi',
+    group: 'Cybersecurity', kind: 'Course completion', date: '23 Sep 2026',
+    file: 'certificates/adbi-cybersecurity.pdf', image: 'certificates/previews/adbi-cybersecurity.png',
+    url: 'https://elearning-adbi.org/certificate-verifier/?&code=197737-179-013-6504',
+  },
+  {
     id: 'cisco-ethical-hacker', title: 'Ethical Hacker',
     issuer: 'Cisco Networking Academy', issuerKey: 'cisco',
     group: 'Cybersecurity', kind: 'Course completion', date: '22 Sep 2026',
@@ -45,10 +64,35 @@ export const certifications = [
     file: 'certificates/kaspersky-ctf.png', image: 'certificates/kaspersky-ctf.png',
   },
   {
-    id: 'dict-cyberpro', title: 'Cybersecurity Professionals Portal',
-    issuer: 'DICT', issuerKey: 'dict',
-    group: 'Training, competitions & recognition', kind: 'Level 1 · Entry-Level recognition', date: '22 Sep 2026',
-    file: 'certificates/dict-cyberpro-badge.png', image: 'certificates/dict-cyberpro-badge.png',
+    id: 'tesda-national-certificate-ii-css', title: 'Computer Systems Servicing · NC II',
+    issuer: 'TESDA', issuerKey: 'tesda',
+    group: 'Building & cloud', kind: 'National Certificate II', date: '15 Jul 2023',
+    file: 'certificates/nc-certificate.pdf', image: 'certificates/previews/nc-certificate.png',
+  },
+];
+
+export const badges = [
+  {
+    id: 'claude-code-101', title: 'Claude Code 101', issuer: 'Claude Academy', date: '24 Oct 2026',
+    image: 'certificates/previews/claude-code-101-badge.png', file: 'certificates/claude-code-101-badge.pdf',
+    url: 'https://academy.claude.com/verify/8eb3afad4815245f4cf32abcd68f1aaa',
+  },
+  {
+    id: 'claude-mcp-advanced', title: 'Model Context Protocol: Advanced Topics', issuer: 'Claude Academy', date: '24 Oct 2026',
+    image: 'certificates/previews/claude-mcp-advanced-badge.png', file: 'certificates/claude-mcp-advanced-badge.pdf',
+    url: 'https://academy.claude.com/verify/485728a66defdcecd813145b815f2e4',
+  },
+  {
+    id: 'google-generative-ai', title: 'Introduction to Generative AI', issuer: 'Google Cloud', date: '07 Oct 2026',
+    image: 'certificates/google-generative-ai-badge.png', file: 'certificates/google-generative-ai-badge.png',
+  },
+  {
+    id: 'openai-codex', title: 'Get Started with Codex', issuer: 'OpenAI Academy', date: '—',
+    image: 'certificates/openai-get-started-with-codex-badge.png', file: 'certificates/openai-get-started-with-codex-badge.png',
+  },
+  {
+    id: 'dict-cyberpro', title: 'Cybersecurity Professionals Portal · Level 1', issuer: 'DICT', date: '22 Sep 2026',
+    image: 'certificates/dict-cyberpro-badge.png', file: 'certificates/dict-cyberpro-badge.png',
     url: 'https://cyberpro.dict.gov.ph/verify/CPB-DM4H-FQFN-6NAF-DP6H',
   },
 ];
