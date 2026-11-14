@@ -1,5 +1,5 @@
 // A soft music-box arrangement of the traditional public-domain carol.
-export function createChristmasMusic(volume = .85) {
+export function createChristmasMusic(volume = .85, onPlaybackChange = () => {}) {
   const Audio = window.AudioContext || window.webkitAudioContext;
   if (!Audio) throw new Error('Web Audio is unavailable');
   const audio = new Audio();
@@ -9,7 +9,7 @@ export function createChristmasMusic(volume = .85) {
   compressor.threshold.value = -12; compressor.knee.value = 12;
   compressor.ratio.value = 3; compressor.attack.value = .006; compressor.release.value = .2;
   master.connect(compressor); compressor.connect(audio.destination);
-  let playing = false, timer, nextEvent = 0, startTime = 0, epoch = 0;
+  let playing = false, wanted = false, timer, nextEvent = 0, startTime = 0, epoch = 0;
   const voices = new Set();
   const beat = .43;
   // Traditional "We Wish You a Merry Christmas", arranged for soft music-box tones.
@@ -53,8 +53,18 @@ export function createChristmasMusic(volume = .85) {
     }
     timer = setTimeout(schedule, 100);
   }
+  function begin() {
+    if (playing || !wanted || audio.state !== 'running' || document.hidden) return false;
+    playing = true; nextEvent = 0; startTime = audio.currentTime + .06;
+    schedule(); onPlaybackChange(true); return true;
+  }
+  audio.addEventListener('statechange', () => {
+    // Some browsers leave resume() pending until they allow sound playback.
+    // Start the song when that pending request is eventually granted.
+    if (audio.state === 'running') begin();
+  });
   function stop() {
-    epoch++; playing = false; clearTimeout(timer);
+    epoch++; wanted = false; playing = false; clearTimeout(timer);
     voices.forEach(voice => { try { voice.stop(); } catch { /* Already ended. */ } });
     voices.clear();
   }
@@ -62,19 +72,17 @@ export function createChristmasMusic(volume = .85) {
     async play({ autoplay = false } = {}) {
       const attempt = epoch;
       if (playing) return true;
+      wanted = true;
       if (audio.state !== 'running') {
         if (autoplay) {
-          // A blocked resume can remain pending until a trusted gesture. Do not
-          // leave the UI waiting on that promise or pretend playback has started.
+          // Keep the browser's resume request alive. It may be granted later
+          // without another play-button click, depending on site autoplay rules.
           await Promise.race([audio.resume().catch(() => {}), new Promise(resolve => setTimeout(resolve, 200))]);
           if (audio.state !== 'running') return false;
         } else await audio.resume();
       }
-      if (audio.state !== 'running') return false;
-      if (document.hidden || attempt !== epoch) return false;
-      if (playing) return true;
-      playing = true; nextEvent = 0; startTime = audio.currentTime + .06;
-      schedule(); return true;
+      if (audio.state !== 'running' || document.hidden || attempt !== epoch) return false;
+      return begin() || playing;
     },
     stop,
     destroy() { stop(); void audio.close(); }

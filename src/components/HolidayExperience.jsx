@@ -24,7 +24,11 @@ export function HolidayProvider({ children }) {
   const startMusic = useCallback(async (autoplay = false) => {
     const attempt = ++request.current;
     try {
-      player.current ??= createChristmasMusic(.85);
+      player.current ??= createChristmasMusic(.85, started => {
+        if (!mounted.current || !wanted.current) return;
+        playingRef.current = started; setPlaying(started);
+        if (started) { setAutoplayBlocked(false); setAudioError(false); }
+      });
       const started = await player.current.play({ autoplay });
       if (!mounted.current || attempt !== request.current || !wanted.current) {
         if (!wanted.current) player.current?.stop();
@@ -37,7 +41,7 @@ export function HolidayProvider({ children }) {
   }, []);
   useEffect(() => {
     mounted.current = true;
-    const timer = setTimeout(() => { if (!document.hidden && wanted.current) void startMusic(true); }, 0);
+    if (!document.hidden && wanted.current) void startMusic(true);
     const firstInteraction = event => {
       if (!wanted.current || playingRef.current || document.hidden || event.target?.closest?.('[data-music-control]')) return;
       void startMusic(false);
@@ -51,7 +55,7 @@ export function HolidayProvider({ children }) {
     document.addEventListener('keydown', firstInteraction);
     document.addEventListener('visibilitychange', visibility);
     return () => {
-      mounted.current = false; request.current++; clearTimeout(timer);
+      mounted.current = false; request.current++;
       document.removeEventListener('pointerdown', firstInteraction);
       document.removeEventListener('keydown', firstInteraction);
       document.removeEventListener('visibilitychange', visibility);
