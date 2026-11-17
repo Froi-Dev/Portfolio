@@ -1,7 +1,7 @@
 // Local banner paths are relative to public/ and support the deployment base URL.
 // Add verified live demo and repository URLs when available.
 export const PROJECT_MEDIA = {
-  DC: { image: 'images/projects/dou-cookie.webp', imageAlt: 'DŌU Dubai chewy cookie ordering storefront with pistachio cookie hero artwork', demoUrl: null, repositoryUrl: null },
+  DC: { image: 'images/projects/dou-cookie.jpg', imageAlt: 'DŌU Cookie ordering storefront showing its full pistachio cookie landing page and box options', demoUrl: null, repositoryUrl: null },
   RN: { image: 'images/projects/rustnote.jpg', imageAlt: 'RustNote banner showing the rich-text editor and floating sticky notes', demoUrl: null, repositoryUrl: null },
   // FroiNet uses the supplied FluxNet banner and source folder.
   FN: { image: 'images/projects/froinet.jpg', imageAlt: 'FluxNet banner for FroiNet showing live network rates and traffic history', demoUrl: null, repositoryUrl: null },
