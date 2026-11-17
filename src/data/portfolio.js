@@ -2,6 +2,22 @@
 // Existing project details reflect the supplied system banners.
 export const PROJECTS = [
   {
+    mark: 'DC',
+    type: 'Web App',
+    category: 'Ordering System',
+    name: 'DŌU Cookie',
+    tagline: 'Choose a cookie box, build your bag, and prepare an order preview.',
+    tech: ['React', 'TypeScript', 'Vite', 'Radix UI'],
+    desc: 'A responsive Dubai chewy cookie ordering storefront with product box selection, quantity controls, a persistent shopping bag, and a delivery details flow. Checkout validates the details and generates a downloadable order preview; the current demo does not submit orders or process payments.',
+    features: [
+      'Browse and compare 2, 6, and 12-cookie boxes with sample prices',
+      'Choose box quantities and add them to a persistent shopping bag',
+      'Review item totals and sample delivery charges',
+      'Enter delivery details with Philippine mobile number validation',
+      'Generate and download a clearly labeled order preview'
+    ]
+  },
+  {
     mark: 'RN',
     type: 'Desktop App',
     category: 'Productivity',
