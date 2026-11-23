@@ -1,15 +1,22 @@
 import { notFound } from 'next/navigation';
-import App from '../../App.jsx';
+import PortfolioRedirect from '../../components/PortfolioRedirect.jsx';
+import { portfolioSections } from '../../lib/portfolioLinks.js';
 
-const pages = { about: 'About', projects: 'Projects', stack: 'Tech Stack', certifications: 'Certifications', contact: 'Contact' };
+const oldSections = Object.keys(portfolioSections).filter(section => section !== 'home');
+
 export const dynamicParams = false;
-export function generateStaticParams() { return Object.keys(pages).map(page => ({ page })); }
+
+export function generateStaticParams() {
+  return oldSections.map(page => ({ page }));
+}
+
 export async function generateMetadata({ params }) {
   const { page } = await params;
-  return { title: pages[page] || 'Page not found' };
+  return { title: portfolioSections[page] || 'Page not found', robots: { index: false, follow: true } };
 }
+
 export default async function PortfolioPage({ params }) {
   const { page } = await params;
-  if (!Object.hasOwn(pages, page)) notFound();
-  return <App page={page} />;
+  if (!oldSections.includes(page)) notFound();
+  return <PortfolioRedirect section={page} />;
 }

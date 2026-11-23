@@ -1,6 +1,20 @@
-// New project details and stacks are verified against their local source folders.
-// Existing project details reflect the supplied system banners.
+// Project details reflect the supplied banners and available local source.
+// Stacks are verified against local manifests or packaged app logs.
 export const PROJECTS = [
+  {
+    mark: 'VG',
+    type: 'Web App',
+    category: 'Fragrance Storefront',
+    name: 'Vigil',
+    tagline: 'Explore four fragrances from the Kintsugi Collection.',
+    tech: [],
+    desc: 'A fragrance storefront for Vigil’s Kintsugi Collection. The collection brings together four 50 mL extraits de parfum in stone-textured bottles traced with gold.',
+    features: [
+      'Fragrance collection with four scents',
+      'Dedicated sections for scent notes and the craft behind the bottles',
+      'Storefront navigation with a bag count'
+    ]
+  },
   {
     mark: 'DC',
     type: 'Web App',
@@ -103,7 +117,7 @@ export const PROJECTS = [
     category: 'Education',
     name: 'ClassTrack',
     tagline: 'Monitor classroom participation, attendance, and live class sessions.',
-    tech: [],
+    tech: ['Python', 'PyTorch', 'YOLO'],
     desc: 'A desktop and web classroom participation monitoring system with a live session dashboard. The banner shows the interface with a simulated camera demo.',
     features: [
       'Live participation queue and hand-raise tracking',
@@ -118,7 +132,7 @@ export const PROJECTS = [
     category: 'Collaboration',
     name: 'CollHuborate',
     tagline: 'Create a workspace, assign tasks, and track project progress together.',
-    tech: [],
+    tech: ['React', 'TypeScript', 'Vite', 'Express', 'SQLite', 'WebSocket'],
     desc: 'A project collaboration platform that brings team workspaces, tasks, and deliverables into one place. The banner shows sample workspaces and tasks in the app.',
     features: [
       'Dedicated workspaces for each project',
@@ -133,7 +147,7 @@ export const PROJECTS = [
     category: 'Cybersecurity',
     name: 'CTF ToolKit',
     tagline: 'Decode, investigate, and discover with a cybersecurity analysis workspace.',
-    tech: [],
+    tech: ['TypeScript', 'Vite', 'Python', 'FastAPI', 'Pydantic', 'Uvicorn'],
     desc: 'A cybersecurity analysis platform bringing cryptography, forensics, and OSINT tools together. The banner highlights the decoder, layered recipes, and flag candidates.',
     features: [
       'Cryptography decoder with chained operations',
@@ -148,7 +162,7 @@ export const PROJECTS = [
     category: 'Content Verification',
     name: 'Verif.AI',
     tagline: 'Check AI content, news, and images with context for Filipino readers.',
-    tech: [],
+    tech: ['React', 'TypeScript', 'Vite', 'Python', 'FastAPI', 'PostgreSQL', 'Redis'],
     desc: 'A Philippine-focused content validation platform and browser extension for checking AI content, news, and images in English, Filipino, and Taglish.',
     features: [
       'AI content detection and fact verification',

@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-22T13:47:21.373Z",
+  "title": "Design System for Froilan De Vera",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Warm paper",
+        "tonalRamp": [
+          "oklch(15% 0.009 75)",
+          "oklch(24% 0.016 75)",
+          "oklch(34% 0.024 75)",
+          "oklch(45% 0.032 75)",
+          "oklch(56% 0.030 75)",
+          "oklch(68% 0.023 75)",
+          "oklch(82% 0.014 75)",
+          "oklch(95% 0.005 75)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15% 0.004 75)",
+          "oklch(24% 0.007 75)",
+          "oklch(34% 0.011 75)",
+          "oklch(45% 0.014 75)",
+          "oklch(56% 0.013 75)",
+          "oklch(68% 0.010 75)",
+          "oklch(82% 0.006 75)",
+          "oklch(95% 0.002 75)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Warm gray",
+        "tonalRamp": [
+          "oklch(15% 0.009 70)",
+          "oklch(24% 0.016 70)",
+          "oklch(34% 0.024 70)",
+          "oklch(45% 0.032 70)",
+          "oklch(56% 0.030 70)",
+          "oklch(68% 0.023 70)",
+          "oklch(82% 0.014 70)",
+          "oklch(95% 0.005 70)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Clean sheet",
+        "tonalRamp": [
+          "oklch(15% 0.007 78)",
+          "oklch(24% 0.012 78)",
+          "oklch(34% 0.018 78)",
+          "oklch(45% 0.024 78)",
+          "oklch(56% 0.023 78)",
+          "oklch(68% 0.017 78)",
+          "oklch(82% 0.011 78)",
+          "oklch(95% 0.004 78)"
+        ]
+      },
+      "raised-paper": {
+        "role": "neutral",
+        "displayName": "Quiet surface",
+        "tonalRamp": [
+          "oklch(15% 0.010 74)",
+          "oklch(24% 0.017 74)",
+          "oklch(34% 0.026 74)",
+          "oklch(45% 0.034 74)",
+          "oklch(56% 0.032 74)",
+          "oklch(68% 0.024 74)",
+          "oklch(82% 0.015 74)",
+          "oklch(95% 0.005 74)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Paper rule",
+        "tonalRamp": [
+          "oklch(15% 0.013 75)",
+          "oklch(24% 0.022 75)",
+          "oklch(34% 0.034 75)",
+          "oklch(45% 0.045 75)",
+          "oklch(56% 0.043 75)",
+          "oklch(68% 0.032 75)",
+          "oklch(82% 0.020 75)",
+          "oklch(95% 0.007 75)"
+        ]
+      },
+      "royal-blue": {
+        "role": "primary",
+        "displayName": "Royal blue",
+        "tonalRamp": [
+          "oklch(15% 0.067 265)",
+          "oklch(24% 0.120 265)",
+          "oklch(34% 0.228 265)",
+          "oklch(45% 0.240 265)",
+          "oklch(56% 0.228 265)",
+          "oklch(68% 0.173 265)",
+          "oklch(82% 0.106 265)",
+          "oklch(95% 0.036 265)"
+        ]
+      },
+      "action-ink": {
+        "role": "neutral",
+        "displayName": "White label",
+        "tonalRamp": [
+          "oklch(15% 0.003 76)",
+          "oklch(24% 0.006 76)",
+          "oklch(34% 0.009 76)",
+          "oklch(45% 0.012 76)",
+          "oklch(56% 0.011 76)",
+          "oklch(68% 0.009 76)",
+          "oklch(82% 0.005 76)",
+          "oklch(95% 0.002 76)"
+        ]
+      },
+      "portrait-paper": {
+        "role": "neutral",
+        "displayName": "Portrait paper",
+        "tonalRamp": [
+          "oklch(15% 0.014 62)",
+          "oklch(24% 0.025 62)",
+          "oklch(34% 0.038 62)",
+          "oklch(45% 0.051 62)",
+          "oklch(56% 0.048 62)",
+          "oklch(68% 0.037 62)",
+          "oklch(82% 0.022 62)",
+          "oklch(95% 0.008 62)"
+        ]
+      },
+      "field-rule": {
+        "role": "neutral",
+        "displayName": "Field border",
+        "tonalRamp": [
+          "oklch(15% 0.013 75)",
+          "oklch(24% 0.022 75)",
+          "oklch(34% 0.034 75)",
+          "oklch(45% 0.045 75)",
+          "oklch(56% 0.043 75)",
+          "oklch(68% 0.032 75)",
+          "oklch(82% 0.020 75)",
+          "oklch(95% 0.007 75)"
+        ]
+      },
+      "royal-blue-hover": {
+        "role": "primary",
+        "displayName": "Deep royal blue",
+        "tonalRamp": [
+          "oklch(15% 0.067 265)",
+          "oklch(24% 0.120 265)",
+          "oklch(34% 0.228 265)",
+          "oklch(45% 0.240 265)",
+          "oklch(56% 0.228 265)",
+          "oklch(68% 0.173 265)",
+          "oklch(82% 0.106 265)",
+          "oklch(95% 0.036 265)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The home role headline"
+      },
+      "heading": {
+        "displayName": "Section heading",
+        "purpose": "The name, section headings, and project titles"
+      },
+      "body": {
+        "displayName": "Body copy",
+        "purpose": "Descriptions, inputs, and other reading text"
+      },
+      "control": {
+        "displayName": "Controls",
+        "purpose": "Action labels in Geist"
+      },
+      "hero-action": {
+        "displayName": "Hero About action",
+        "purpose": "A compact, bold link from the hero to About"
+      }
+    },
+    "shadows": [
+      {
+        "name": "portrait-print",
+        "value": "0 .55rem 1.1rem var(--sheet-shadow)",
+        "purpose": "Lifts the rotated portrait above the page"
+      }
+    ],
+    "motion": [
+      {
+        "name": "standard-ease",
+        "value": "cubic-bezier(.2, .75, .25, 1)",
+        "purpose": "Shared easing for interaction and the opening proof"
+      },
+      {
+        "name": "control-duration",
+        "value": "180ms",
+        "purpose": "Button movement and fill changes"
+      },
+      {
+        "name": "portrait-entrance",
+        "value": "520ms",
+        "purpose": "One-time entrance for the hero portrait"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "project-showcase-stack",
+        "value": "790px"
+      },
+      {
+        "name": "desktop-section-navigation",
+        "value": "1100px and 560px height"
+      },
+      {
+        "name": "section-columns-stack",
+        "value": "700px"
+      },
+      {
+        "name": "project-index-one-column",
+        "value": "700px"
+      },
+      {
+        "name": "home-title-two-lines",
+        "value": "660px"
+      },
+      {
+        "name": "contact-fields-stack",
+        "value": "420px"
+      },
+      {
+        "name": "narrow-home-content",
+        "value": "380px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Know Me Better",
+      "kind": "button",
+      "refersTo": "button-accent",
+      "description": "This compact royal blue button jumps to About and places a downward arrow in a separate segment.",
+      "html": "<a href=\"#about\" class=\"ds-hero-action\"><span>Know Me Better</span><span class=\"ds-hero-action-icon\" aria-hidden=\"true\">↓</span></a>",
+      "css": ".ds-hero-action { display: inline-flex; align-items: stretch; min-block-size: 3.2rem; border: 1px solid var(--action-border, #0504aa); border-radius: .45rem; background: var(--action, #0504aa); color: var(--action-ink, #fff); font: 740 clamp(.94rem, 1.9cqw, 1.35rem)/1.18 var(--font-body, Geist, system-ui, sans-serif); letter-spacing: -.022em; text-decoration: none; } .ds-hero-action > span { display: grid; place-items: center; padding: .7rem clamp(.65rem, 1.55vw, 1.15rem); } .ds-hero-action .ds-hero-action-icon { flex: 0 0 clamp(2.25rem, 3.65vw, 3.1rem); padding: 0; border-inline-start: 1px solid rgb(255 255 255 / .32); } .ds-hero-action:hover { background: var(--action-hover, #03037e); } .ds-hero-action:focus-visible { outline: 2px solid var(--focus, #0504aa); outline-offset: 4px; }"
+    },
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The supplied royal-blue fill marks a primary action.",
+      "html": "<button type=\"submit\" class=\"ds-control ds-primary\">Open email draft</button>",
+      "css": ".ds-control { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: .625rem 1.125rem; border: 1px solid; border-radius: var(--radius, 3px); font: 550 .9375rem var(--font-body, Geist, system-ui, sans-serif); cursor: pointer; transition: background-color var(--dur, 180ms) var(--ease, ease), border-color var(--dur, 180ms) var(--ease, ease), transform var(--dur, 180ms) var(--ease, ease); } .ds-control:hover { transform: translateY(-2px); } .ds-control:active { transform: translateY(1px); } .ds-primary { background: var(--action, #0504aa); border-color: var(--action-border, #0504aa); color: var(--action-ink, #fff); } .ds-primary:hover { background: var(--action-hover, #03037e); } .ds-control:focus-visible { outline: 2px solid var(--focus, #0504aa); outline-offset: 4px; } @media (prefers-reduced-motion: reduce) { .ds-control { transition: none; } }"
+    },
+    {
+      "name": "Secondary button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A restrained outline accompanies the primary action.",
+      "html": "<button type=\"button\" class=\"ds-control ds-secondary\">Open original</button>",
+      "css": ".ds-control { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: .625rem 1.125rem; border: 1px solid; border-radius: var(--radius, 3px); font: 550 .9375rem var(--font-body, Geist, system-ui, sans-serif); cursor: pointer; transition: background-color var(--dur, 180ms) var(--ease, ease), border-color var(--dur, 180ms) var(--ease, ease), transform var(--dur, 180ms) var(--ease, ease); } .ds-control:hover { transform: translateY(-2px); } .ds-control:active { transform: translateY(1px); } .ds-secondary { background: transparent; border-color: var(--border, #d8cfc1); color: var(--fg, #0a0a09); } .ds-secondary:hover { background: var(--surface-2, #eee7dc); border-color: var(--field-border, #85796c); } .ds-control:focus-visible { outline: 2px solid var(--focus, #0504aa); outline-offset: 4px; } @media (prefers-reduced-motion: reduce) { .ds-control { transition: none; } }"
+    },
+    {
+      "name": "Contact field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "An explicit label sits directly above the input.",
+      "html": "<label class=\"ds-label\">Email address<input class=\"ds-control ds-field\" type=\"email\" autocomplete=\"email\"></label>",
+      "css": ".ds-label { display: grid; gap: 6px; color: var(--fg, #0a0a09); font: 600 .9rem var(--font-body, Geist, system-ui, sans-serif); } .ds-field { padding: 10px 12px; min-height: 46px; background: var(--bg, #f7f2ea); border: 1px solid var(--field-border, #85796c); border-radius: var(--radius, 3px); color: var(--fg, #0a0a09); font: 400 1rem/1.5 var(--font-body, Geist, system-ui, sans-serif); } .ds-field:hover, .ds-field:focus-visible { border-color: var(--accent, #0504aa); } .ds-control:focus-visible { outline: 2px solid var(--focus, #0504aa); outline-offset: 4px; }"
+    },
+    {
+      "name": "Project filter",
+      "kind": "chip",
+      "description": "The pressed filter inverts paper and ink, with the count beside the label.",
+      "html": "<button class=\"ds-control ds-filter\" type=\"button\" aria-pressed=\"true\">Web App <span>4</span></button>",
+      "css": ".ds-filter { display: inline-flex; gap: .6rem; align-items: center; min-height: 44px; padding: .625rem .9rem; background: var(--surface, #fffcf7); border: 1px solid var(--border, #d8cfc1); border-radius: var(--radius, 3px); color: var(--fg, #0a0a09); font: 550 .875rem var(--font-body, Geist, system-ui, sans-serif); cursor: pointer; transition: background-color var(--dur, 180ms) var(--ease, ease), border-color var(--dur, 180ms) var(--ease, ease), transform var(--dur, 180ms) var(--ease, ease); } .ds-filter span { font-size: .75rem; opacity: .85; } .ds-filter[aria-pressed=\"true\"] { background: var(--fg, #0a0a09); color: var(--bg, #f7f2ea); border-color: var(--fg, #0a0a09); } .ds-filter:hover { border-color: var(--accent, #0504aa); transform: translateY(-2px); } .ds-filter:active { transform: translateY(1px); } .ds-control:focus-visible { outline: 2px solid var(--focus, #0504aa); outline-offset: 4px; } @media (prefers-reduced-motion: reduce) { .ds-control { transition: none; } }"
+    },
+    {
+      "name": "Floating section navigation",
+      "kind": "nav",
+      "description": "Large, bold, straight links stay centered as a group. Thin rules separate the labels, and an animated royal blue rule marks the active section.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Primary\"><a href=\"#home\"><span>Home</span></a><a href=\"#about\"><span>About</span></a><a href=\"#projects\" aria-current=\"location\"><span>Projects</span></a><a href=\"#stack\"><span>Stack</span></a><a href=\"#certifications\"><span>Certificates</span></a><a href=\"#contact\"><span>Contact</span></a></nav>",
+      "css": ".ds-nav { width: 10rem; font: 780 1.2rem var(--font-body, Geist, system-ui, sans-serif); letter-spacing: -.035em; } .ds-nav a { position: relative; display: flex; align-items: center; min-height: 50px; color: var(--fg, #0a0a09); text-decoration: none; } .ds-nav a:not(:last-child) { border-bottom: 1px solid var(--border, #d8cfc1); } .ds-nav a::after { content: ''; position: absolute; inset: auto 0 0; height: 1px; background: var(--focus, #0504aa); transform: scaleX(0); transform-origin: left; transition: transform 300ms ease; } .ds-nav a[aria-current] { color: var(--focus, #0504aa); } .ds-nav a[aria-current]::after { transform: scaleX(1); } .ds-nav a:focus-visible { outline: 2px solid var(--focus, #0504aa); outline-offset: 4px; } @media (prefers-reduced-motion: reduce) { .ds-nav a::after { transition: none; } }"
+    },
+    {
+      "name": "Project showcase preview",
+      "kind": "card",
+      "refersTo": "media",
+      "description": "A flat screenshot opens project details, with tilted previews behind it suggesting more projects to browse.",
+      "html": "<div class=\"ds-showcase\"><div class=\"ds-stack\"><div class=\"ds-rear\" aria-hidden=\"true\"><img src=\"/images/projects/dou-cookie.webp\" alt=\"\"></div><button class=\"ds-front\" type=\"button\" aria-haspopup=\"dialog\" aria-label=\"View Vigil details\"><img src=\"/images/projects/vigil.webp\" alt=\"Vigil fragrance storefront showing the Kintsugi Collection\"></button></div><div class=\"ds-copy\"><h2>Vigil</h2><p>Web App / Fragrance Storefront</p><p>Explore the Kintsugi Collection and compare its fragrances.</p><div class=\"ds-navigation\" role=\"group\" aria-label=\"Browse project previews\"><button type=\"button\">Previous</button><span>1 of 11</span><button type=\"button\">Next</button></div></div></div>",
+      "css": ".ds-showcase { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: center; gap: 1.5rem; color: var(--fg, #0a0a09); font: 400 1rem/1.55 var(--font-body, Geist, system-ui, sans-serif); } .ds-stack { position: relative; isolation: isolate; margin: 1rem .5rem; } .ds-front, .ds-rear { display: grid; place-items: center; overflow: clip; border: 1px solid var(--border, #d8cfc1); border-radius: var(--radius, 3px); background: var(--media-field, #eee7dc); } .ds-front { position: relative; width: 100%; aspect-ratio: 1.55; padding: 0; cursor: pointer; } .ds-rear { position: absolute; inset: 0; transform: translateY(-.4rem) rotate(-4deg); } .ds-stack img { width: 100%; height: 100%; object-fit: contain; } .ds-copy { display: grid; gap: .4rem; } .ds-copy h2 { margin: 0; font-weight: 730; } .ds-copy p { margin: 0; color: var(--muted, #49453f); } .ds-navigation { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; margin-top: .5rem; } .ds-navigation button { min-height: 44px; padding: .4rem .6rem; background: transparent; border: 1px solid var(--border, #d8cfc1); border-radius: var(--radius, 3px); color: inherit; font: inherit; cursor: pointer; } .ds-showcase button:focus-visible { outline: 2px solid var(--focus, #0504aa); outline-offset: 4px; } @media (max-width: 790px) { .ds-showcase { grid-template-columns: minmax(0, 1fr); gap: .85rem; } }"
+    },
+    {
+      "name": "CV link",
+      "kind": "button",
+      "description": "The underlined download sits directly below the name.",
+      "html": "<a href=\"/documents/Froilan-De-Vera-CV.pdf\" class=\"ds-download\" download>Download CV <svg width=\"17\" height=\"17\" viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M10 3v13m-5-5 5 5 5-5\"/></svg></a>",
+      "css": ".ds-download { display: inline-flex; align-items: center; gap: .4rem; min-height: 44px; color: var(--fg, #0a0a09); font: 550 1rem var(--font-body, Geist, system-ui, sans-serif); text-decoration: underline; text-underline-offset: .38em; } .ds-download:hover { text-decoration-thickness: 2px; } .ds-download:focus-visible { outline: 2px solid var(--focus, #0504aa); outline-offset: 4px; }"
+    },
+    {
+      "name": "Portrait print",
+      "kind": "custom",
+      "refersTo": "portrait",
+      "description": "The hero portrait tilts across the poster headline.",
+      "html": "<figure class=\"ds-portrait\"><img src=\"/images/froilan-portrait.webp\" alt=\"Froilan De Vera\"></figure>",
+      "css": ".ds-portrait { isolation: isolate; width: 10rem; aspect-ratio: 1 / 1.29; margin: 1rem; background: var(--photo-paper, #f5e7db); border-radius: .8rem; overflow: clip; box-shadow: 0 .55rem 1.1rem var(--sheet-shadow, #31221940); transform: rotate(9deg); } .ds-portrait img { display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(1.17); transform-origin: 50% 68%; mix-blend-mode: multiply; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "A typographic portrait opens a working portfolio.",
+    "overview": "The supplied reference sets the visual character. A condensed role headline spans warm paper. Froilan’s photograph crosses its lower edge like a printed portrait, with the name and actions set in a bold neutral sans. The supplied royal blue #0504aa identifies Know Me Better, the hero button that links to About.\n\nThe scrolling portfolio carries the paper and ink treatment from the portrait hero through About, Projects, Stack, Certificates, and Contact. Project and document images retain their original colors. The shared source is src/portfolio.css.",
+    "keyCharacteristics": [
+      "Condensed display type and bold sans-serif labels",
+      "A fixed light palette with warm paper, near-black controls, and royal-blue primary actions",
+      "A tilted portrait print and aligned sections on one page"
+    ],
+    "rules": [],
+    "dos": [
+      "Do keep concurrent choices and their labels readable at narrow widths.",
+      "Do preserve the supplied colors and content of project previews.",
+      "Do keep focus visible and make motion optional for reduced-motion visitors.",
+      "Do keep the featured project screenshot flat and use overlap on the prints behind it."
+    ],
+    "donts": [
+      "Don’t put navigation over the work or cover form controls with fixed chrome."
+    ]
+  }
+}

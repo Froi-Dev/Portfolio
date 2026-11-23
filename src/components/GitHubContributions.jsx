@@ -1,10 +1,14 @@
+'use client';
+
 import { useEffect, useRef, useState } from 'react';
 import activity from '../data/github-contributions.json';
-import Icon from './Icon.jsx';
 import './GitHubContributions.css';
 
 const dateOf = value => new Date(`${value}T00:00:00Z`);
 const dateLabel = value => dateOf(value).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+const syncDate = new Date(activity.fetchedAt).toLocaleDateString('en-US', {
+  month: 'short', day: 'numeric', year: 'numeric', timeZone: 'Asia/Manila',
+});
 const firstWeekday = dateOf(activity.days[0].date).getUTCDay();
 const weekCount = Math.ceil((firstWeekday + activity.days.length) / 7);
 const monthLabels = activity.days.flatMap((day, index) => dateOf(day.date).getUTCDate() === 1 ? [{
@@ -44,10 +48,12 @@ export default function GitHubContributions() {
 
   return <section className="github-activity" aria-labelledby="github-activity-title">
     <header className="github-activity-heading">
-      <div><span className="mini-label">Behind the commits</span><h2 id="github-activity-title"><Icon name="github" /> GitHub activity</h2></div>
-      <a className="github-profile-link" href={`https://github.com/${activity.username}`} target="_blank" rel="noreferrer">@{activity.username} <Icon name="arrow-up-right" /></a>
+      <div>
+        <h3 id="github-activity-title">GitHub activity</h3>
+        <p className="github-activity-total"><strong>{activity.total}</strong> contributions in the last year</p>
+      </div>
+      <a className="github-profile-link text-link" href={`https://github.com/${activity.username}`} target="_blank" rel="noreferrer">@{activity.username}</a>
     </header>
-    <p className="github-activity-total"><strong>{activity.total}</strong> contributions in the last year</p>
     <p id="github-calendar-help" className="github-sr-only">Select a day to see its contribution count. Use arrow keys to explore the calendar, or Home and End to jump to the first and last day.</p>
     <div className="github-calendar-scroll" ref={viewport}>
       <div className="github-calendar" style={{ '--weeks': weekCount }}>
@@ -74,6 +80,6 @@ export default function GitHubContributions() {
       <p aria-live="polite" aria-atomic="true"><strong>{selected.count} {selected.count === 1 ? 'contribution' : 'contributions'}</strong> on {dateLabel(selected.date)}</p>
       <div className="github-legend" aria-label="Color intensity indicates fewer to more contributions"><span>Less</span>{[0, 1, 2, 3, 4].map(level => <i key={level} data-level={level} aria-hidden="true" />)}<span>More</span></div>
     </div>
-    <p className="github-sync-note">Synced from GitHub · {dateLabel(activity.fetchedAt.slice(0, 10))}</p>
+    <p className="github-sync-note">Synced <time dateTime={activity.fetchedAt}>{syncDate}</time></p>
   </section>;
 }

@@ -23,9 +23,19 @@ Upstream license: https://github.com/devicons/devicon/blob/v2.17.0/LICENSE
 
 Technology icons remain the trademarks of their respective owners.
 
+Additional technology logos are documented in `public/icons/stack/icons-credits.json`.
+
+## Fonts
+
+Anton and Geist are self-hosted under the SIL Open Font License. Their notices are in `src/fonts/OFL-Anton.txt` and `src/fonts/OFL-Geist.txt`.
+
 ## Portrait
 
 The portrait in `public/images/` was supplied by the user for this portfolio.
+
+## Project covers
+
+The Vigil, DŌU Cookie, and Melodix WebP covers in `public/images/projects/` come from the user's supplied `Vigil-portfolio-cover.png`, `dou-portfolio-cover-actual.png`, and `melodix-cover.png` files.
 
 ## Connected carousel
 

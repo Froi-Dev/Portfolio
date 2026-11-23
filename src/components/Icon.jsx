@@ -2,12 +2,18 @@
 const controlPaths = {
   'arrow-left': 'M19 12H5m7-7-7 7 7 7',
   'arrow-right': 'M5 12h14m-7-7 7 7-7 7',
+  'arrow-down': 'M12 5v14m-7-7 7 7 7-7',
   'arrow-up-right': 'M6 18 18 6M6 6h12v12',
+  menu: 'M4 8h16M4 16h16',
   'pause-fill': 'M8 5v14M16 5v14',
   'play-fill': 'm8 5 11 7-11 7Z',
   'x-lg': 'm6 6 12 12M6 18 18 6',
   'check2': 'm5 12 4 4L19 6',
   copy: 'M9 9h11v11H9ZM15 9V4H4v11h5',
+  download: 'M12 3v12m-5-5 5 5 5-5M5 16v4h14v-4',
+  'code-slash': 'm7 7-5 5 5 5m10-10 5 5-5 5m-3-13-4 16',
+  stars: 'M9 3c0 4-2 6-6 6 4 0 6 2 6 6 0-4 2-6 6-6-4 0-6-2-6-6Zm9 10v8m-4-4h8',
+  'shield-check': 'M12 22s7-3 7-10V5l-7-3-7 3v7c0 7 7 10 7 10Zm-3-10 2 2 4-4',
   sun: 'M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5M17 12a5 5 0 1 1-10 0 5 5 0 0 1 10 0',
   'moon-stars': 'M20 15.5A9 9 0 0 1 8.5 4 9 9 0 1 0 20 15.5M17 2v4m-2-2h4',
 };

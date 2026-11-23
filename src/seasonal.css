@@ -1,0 +1,15 @@
+/* Hallmark v2 · Studio / editorial · Christmas archive · supplied village artwork */
+/* Hallmark · pre-emit critique: give the original landscape space and put playback in reach. */
+.seasonal-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem; }
+.seasonal-controls audio { width: min(19rem, 100%); }
+.seasonal-scene {
+  position: relative;
+  overflow: clip;
+  min-height: clamp(23rem, 50vw, 37rem);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.seasonal-scene canvas,
+.seasonal-scene img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.seasonal-scene img { object-fit: cover; }
