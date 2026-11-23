@@ -11,6 +11,6 @@ export const PROJECT_MEDIA = {
   CT: { image: 'images/projects/classtrack.webp', imageAlt: 'ClassTrack classroom participation dashboard with a simulated camera demo', demoUrl: null, repositoryUrl: null },
   CH: { image: 'images/projects/collhuborate.webp', imageAlt: 'CollHuborate banner showing project workspaces and task tracking', demoUrl: null, repositoryUrl: null },
   CTF: { image: 'images/projects/ctf-toolkit.webp', imageAlt: 'CTF ToolKit banner showing the cryptography decoder and analysis tools', demoUrl: null, repositoryUrl: null },
-  MX: { image: 'images/projects/melodix.webp', imageAlt: 'Melodix cover showing three Android screens for the music player, Home, and library', demoUrl: null, repositoryUrl: 'https://github.com/Froi-Dev/Melodix' },
+  MX: { image: 'images/projects/melodix-generated-cover.webp', imageAlt: 'Melodix music app shown across its Home, Now Playing, and Your Library screens', demoUrl: null, repositoryUrl: 'https://github.com/Froi-Dev/Melodix' },
   VA: { image: 'images/projects/verif-ai.webp', imageAlt: 'Verif.AI content verification platform and browser extension banner', demoUrl: null, repositoryUrl: null },
 };
